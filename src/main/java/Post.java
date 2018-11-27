@@ -1,16 +1,18 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class Post {
-    private float id;
+    private Integer id;
     private Integer published;
-    ArrayList< Float > location = new ArrayList < Float > ();
+    private List<Double> location;
     private String category;
+    private List<String> liked_by;
+    private List<String> commented_by;
 
     public float getId() {
         return id;
     }
 
-    public void setId(float id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -22,11 +24,11 @@ public class Post {
         this.published = published;
     }
 
-    public ArrayList<Float> getLocation() {
+    public List<Double> getLocation() {
         return location;
     }
 
-    public void setLocation(ArrayList<Float> location) {
+    public void setLocation(List<Double> location) {
         this.location = location;
     }
 
@@ -38,22 +40,20 @@ public class Post {
         this.category = category;
     }
 
-    public ArrayList<String> getLiked_by() {
+    public List<String> getLiked_by() {
         return liked_by;
     }
 
-    public void setLiked_by(ArrayList<String> liked_by) {
+    public void setLiked_by(List<String> liked_by) {
         this.liked_by = liked_by;
     }
 
-    public ArrayList<String> getCommented_by() {
+    public List<String> getCommented_by() {
         return commented_by;
     }
 
-    public void setCommented_by(ArrayList<String> commented_by) {
+    public void setCommented_by(List<String> commented_by) {
         this.commented_by = commented_by;
     }
 
-    ArrayList < String > liked_by = new ArrayList < String > ();
-    ArrayList < String > commented_by = new ArrayList < String > ();
 }
