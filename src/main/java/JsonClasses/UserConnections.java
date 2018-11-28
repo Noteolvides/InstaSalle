@@ -1,3 +1,5 @@
+package JsonClasses;
+
 public class UserConnections {
     private String username;
     private Integer since;
