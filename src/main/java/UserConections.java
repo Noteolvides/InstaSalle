@@ -1,6 +1,9 @@
 public class UserConections {
     private String username;
-    private float since;
+    private Integer since;
+    private Integer visits;
+    private Integer likes;
+    private Integer comments;
 
     public String getUsername() {
         return username;
@@ -10,21 +13,36 @@ public class UserConections {
         this.username = username;
     }
 
-    public float getSince() {
+    public Integer getSince() {
         return since;
     }
 
-    public void setSince(float since) {
+    public void setSince(Integer since) {
         this.since = since;
     }
 
-    public float getVisits() {
+    public Integer getVisits() {
         return visits;
     }
 
-    public void setVisits(float visits) {
+    public void setVisits(Integer visits) {
         this.visits = visits;
     }
 
-    private float visits;
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
+    public Integer getLikes() {
+        return likes;
+    }
+
+    public void setComments(Integer comments) {
+        this.comments = comments;
+    }
+
+    public Integer getComments() {
+        return comments;
+    }
+
 }
