@@ -4,7 +4,7 @@ public class User {
     private String username;
     private float followers;
     private float follows;
-    ArrayList < UserConections > connections = new ArrayList < UserConections > ();
+    ArrayList <UserConnections> connections = new ArrayList <UserConnections> ();
     ArrayList < Post > posts = new ArrayList < Post > ();
     ArrayList < Integer > likedPosts = new ArrayList < Integer > ();
     ArrayList < Integer > commentedPosts = new ArrayList< Integer >();
@@ -21,11 +21,11 @@ public class User {
         this.follows = follows;
     }
 
-    public ArrayList<UserConections> getConnections() {
+    public ArrayList<UserConnections> getConnections() {
         return connections;
     }
 
-    public void setConnections(ArrayList<UserConections> connections) {
+    public void setConnections(ArrayList<UserConnections> connections) {
         this.connections = connections;
     }
 
