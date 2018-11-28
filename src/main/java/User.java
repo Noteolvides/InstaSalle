@@ -1,55 +1,67 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     private String username;
-    private float followers;
-    private float follows;
-    ArrayList <UserConnections> connections = new ArrayList <UserConnections> ();
-    ArrayList < Post > posts = new ArrayList < Post > ();
-    ArrayList < Integer > likedPosts = new ArrayList < Integer > ();
-    ArrayList < Integer > commentedPosts = new ArrayList< Integer >();
+    private Integer followers;
+    private Integer follows;
+    private List<UserConnections> connections;
+    private List<Post> posts;
+    private List<Integer> likedPosts;
+    private List<Integer> commentedPosts;
+
+    public String getUsername() {
+        return username;
+    }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setFollowers(float followers) {
+    public Integer getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Integer followers) {
         this.followers = followers;
     }
 
-    public void setFollows(float follows) {
+    public Integer getFollows() {
+        return follows;
+    }
+
+    public void setFollows(Integer follows) {
         this.follows = follows;
     }
 
-    public ArrayList<UserConnections> getConnections() {
+    public List<UserConnections> getConnections() {
         return connections;
     }
 
-    public void setConnections(ArrayList<UserConnections> connections) {
+    public void setConnections(List<UserConnections> connections) {
         this.connections = connections;
     }
 
-    public ArrayList<Post> getPosts() {
+    public List<Post> getPosts() {
         return posts;
     }
 
-    public void setPosts(ArrayList<Post> posts) {
+    public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
 
-    public ArrayList<Integer> getLikedPosts() {
+    public List<Integer> getLikedPosts() {
         return likedPosts;
     }
 
-    public void setLikedPosts(ArrayList<Integer> likedPosts) {
+    public void setLikedPosts(List<Integer> likedPosts) {
         this.likedPosts = likedPosts;
     }
 
-    public ArrayList<Integer> getCommentedPosts() {
+    public List<Integer> getCommentedPosts() {
         return commentedPosts;
     }
 
-    public void setCommentedPosts(ArrayList<Integer> commentedPosts) {
+    public void setCommentedPosts(List<Integer> commentedPosts) {
         this.commentedPosts = commentedPosts;
     }
 }

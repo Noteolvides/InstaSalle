@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47a74439-6d9b-42e5-9e4c-6235a13c27a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,25 +38,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="180" />
-          <entry key="txt" value="301" />
+          <entry key="java" value="231" />
+          <entry key="txt" value="427" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="180" />
-          <entry key="PLAIN_TEXT" value="302" />
+          <entry key="JAVA" value="231" />
+          <entry key="PLAIN_TEXT" value="428" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Post.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -70,17 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-              <folding>
-                <element signature="e#194#211#0" expanded="true" />
-                <element signature="e#261#269#0" expanded="true" />
-                <element signature="e#327#338#0" expanded="true" />
-                <element signature="e#399#410#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -105,6 +99,7 @@
         <option value="$PROJECT_DIR$/src/main/java/UserConections.java" />
         <option value="$PROJECT_DIR$/src/main/java/UserConnections.java" />
         <option value="$PROJECT_DIR$/src/main/java/Post.java" />
+        <option value="$PROJECT_DIR$/src/main/java/User.java" />
       </list>
     </option>
   </component>
@@ -162,7 +157,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543391459064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543392108233" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -191,7 +186,7 @@
       <updated>1543337232622</updated>
       <workItem from="1543337233871" duration="450000" />
       <workItem from="1543340076862" duration="1632000" />
-      <workItem from="1543390819839" duration="615000" />
+      <workItem from="1543390819839" duration="1262000" />
     </task>
     <task id="LOCAL-00001" summary="Edit attributes Post&#10;&#10;&#10;Modified attributes in Post - Corrected using the jsontopojo.com">
       <created>1543342078279</created>
@@ -214,11 +209,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543391408891</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed returns not matching in Post&#10;&#10;&#10;Some returns of the getters didn't match types with the attributes">
+      <created>1543391533409</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543391533409</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2697000" />
+    <option name="totallyTimeSpent" value="3344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1173" height="1050" extended-state="6" />
@@ -231,7 +233,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Messages" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -266,26 +268,14 @@
     <MESSAGE value="Edit attributes Post&#10;&#10;&#10;Modified attributes in Post - Corrected using the jsontopojo.com" />
     <MESSAGE value="Edit attributes UserConnections&#10;&#10;&#10;Modified attributes in UserConnections - Corrected using the jsontopojo.com" />
     <MESSAGE value="Corrected name UserConnections&#10;&#10;&#10;Changed UserConections to UserConnections miss-spelling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected name UserConnections&#10;&#10;&#10;Changed UserConections to UserConnections miss-spelling" />
+    <MESSAGE value="Fixed returns not matching in Post&#10;&#10;&#10;Some returns of the getters didn't match types with the attributes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed returns not matching in Post&#10;&#10;&#10;Some returns of the getters didn't match types with the attributes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/xs_dataset.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121800">
           <caret line="8120" column="7" selection-start-line="8120" selection-start-column="7" selection-end-line="8120" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#194#211#0" expanded="true" />
-            <element signature="e#261#269#0" expanded="true" />
-            <element signature="e#327#338#0" expanded="true" />
-            <element signature="e#399#410#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -299,7 +289,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Post.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
