@@ -1,6 +1,20 @@
+package JsonClasses;
+
 public class UserConnections {
     private String username;
     private Integer since;
+
+    @Override
+    public String toString() {
+        return "UserConnections{" +
+                "username='" + username + '\'' +
+                ", since=" + since +
+                ", visits=" + visits +
+                ", likes=" + likes +
+                ", comments=" + comments +
+                '}';
+    }
+
     private Integer visits;
     private Integer likes;
     private Integer comments;
