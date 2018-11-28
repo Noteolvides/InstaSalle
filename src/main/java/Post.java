@@ -8,7 +8,7 @@ public class Post {
     private List<String> liked_by;
     private List<String> commented_by;
 
-    public float getId() {
+    public Integer getId() {
         return id;
     }
 
