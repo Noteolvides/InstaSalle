@@ -7,6 +7,19 @@ public class Post {
     private Integer published;
     private List<Double> location;
     private String category;
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", published=" + published +
+                ", location=" + location +
+                ", category='" + category + '\'' +
+                ", liked_by=" + liked_by +
+                ", commented_by=" + commented_by +
+                '}';
+    }
+
     private List<String> liked_by;
     private List<String> commented_by;
 

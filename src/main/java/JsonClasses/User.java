@@ -7,6 +7,20 @@ public class User {
     private Integer followers;
     private Integer follows;
     private List<UserConnections> connections;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", followers=" + followers +
+                ", follows=" + follows +
+                ", connections=" + connections +
+                ", posts=" + posts +
+                ", likedPosts=" + likedPosts +
+                ", commentedPosts=" + commentedPosts +
+                '}';
+    }
+
     private List<Post> posts;
     private List<Integer> likedPosts;
     private List<Integer> commentedPosts;
