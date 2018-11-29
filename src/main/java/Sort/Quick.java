@@ -1,37 +1,55 @@
 package Sort;
 
-import JsonClasses.Post;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public class Quick {
-    public Quick() {
-    }
-    public void QuickSort(List<Post> a){
-        QuickSort2(a,0,a.size()-1);
-    }
-    private void QuickSort2(List<Post> a, int lowIndex , int highIndex){
-        if(lowIndex < highIndex){
-            int t = partition(a,lowIndex,highIndex);
-            QuickSort2(a,lowIndex,t-1);
-            QuickSort2(a,t+1,highIndex);
+    public static Integer[] QuickSort(Integer[] a, Integer i, Integer j) {
+        Integer s, t;
+
+        if (i >= j) {
+            return a;
         }
+        if (i < j) {
+            a = particio(a, i, j);
+            a = QuickSort(a, i, t);
+            a = QuickSort(a, s, j);
+        }
+        return a;
     }
-    private int partition(List<Post> a,int lowIndex,int HighIndex){
-        int pivot = a.get(HighIndex).getPublished();
-        int i = lowIndex - 1;
-        Post aux;
-        for (int j = lowIndex; j < HighIndex ; j++) {
-            if (a.get(j).getPublished() <= pivot){
-                i++;
-                aux = a.get(i);
-                a.set(i,a.get(j));
-                a.set(j,aux);
+
+
+    //Falta corregir els returns
+    private static Integer[] particio(Integer[] a, Integer i, Integer j) {
+        Integer mig, pivot, tmp, s, t;
+
+        s = i;
+        t = j;
+        mig = (i + j) / 2;
+        pivot = a[mig];
+
+        while (s <= t) {
+            while (a[s] < pivot) {
+                s++;
+            }
+            while (a[t] > pivot) {
+                t++;
+            }
+            if (s < t) {
+                tmp = a[s];
+                a[s] = a[t];
+                a[t] = tmp;
+                s++;
+                t--;
+            }
+            if (s == t) {
+                s++;
+                t--;
+            }
+            if (s > t) {
+
             }
         }
-        aux = a.get(i + 1);
-        a.set(i + 1,a.get(HighIndex));
-        a.set(HighIndex,aux);
-        return i+1;
+
+        return a;
     }
 }
