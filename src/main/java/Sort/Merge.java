@@ -1,7 +1,7 @@
 package Sort;
 
 public class Merge {
-    public Integer[] ordenaMerge(Integer[] a, Integer i, Integer j){
+    public static Integer[] ordenaMerge(Integer[] a, Integer i, Integer j){
         Integer mig;
 
         if (i>=j){
@@ -15,8 +15,8 @@ public class Merge {
         }
         return a;
     }
-    
-    public Integer[] merge(Integer[]a, Integer i, Integer mig, Integer j){
+
+    public static Integer[] merge(Integer[]a, Integer i, Integer mig, Integer j){
         Integer[] b;
         Integer k1, k2, cursor, kr;
 

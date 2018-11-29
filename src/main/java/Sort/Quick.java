@@ -3,7 +3,7 @@ package Sort;
 import java.util.ArrayList;
 
 public class Quick {
-    public Integer[] QuickSort(Integer[] a, Integer i, Integer j) {
+    public static Integer[] QuickSort(Integer[] a, Integer i, Integer j) {
         Integer s, t;
 
         if (i >= j) {
@@ -19,7 +19,7 @@ public class Quick {
 
 
     //Falta corregir els returns
-    private Integer[] particio(Integer[] a, Integer i, Integer j) {
+    private static Integer[] particio(Integer[] a, Integer i, Integer j) {
         Integer mig, pivot, tmp, s, t;
 
         s = i;
