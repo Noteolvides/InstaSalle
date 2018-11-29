@@ -1,55 +1,51 @@
 package Sort;
 
-import java.util.ArrayList;
+import JsonClasses.Post;
+
+import java.util.List;
+
 
 public class Quick {
-    public static Integer[] QuickSort(Integer[] a, Integer i, Integer j) {
-        Integer s, t;
-
-        if (i >= j) {
-            return a;
-        }
+    public void QuickSort(List<Post> a){
+        Sort(a,0,a.size()-1);
+    }
+    private void Sort(List<Post> a, Integer i, Integer j) {
+        Integer s = 0;
+        Integer t = 0;
         if (i < j) {
-            a = particio(a, i, j);
-            a = QuickSort(a, i, t);
-            a = QuickSort(a, s, j);
+            particio(a, i, j,s,t);
+            Sort(a, i, t);
+            Sort(a, s, j);
         }
-        return a;
     }
 
 
-    //Falta corregir els returns
-    private static Integer[] particio(Integer[] a, Integer i, Integer j) {
-        Integer mig, pivot, tmp, s, t;
-
+    private void particio(List<Post> a, Integer i, Integer j,Integer s,Integer t) {
+        Integer mig, pivot;
+        Post tmp;
         s = i;
         t = j;
         mig = (i + j) / 2;
-        pivot = a[mig];
+        pivot = a.get(mig).getPublished();
 
         while (s <= t) {
-            while (a[s] < pivot) {
+            while (a.get(s).getPublished() < pivot) {
                 s++;
             }
-            while (a[t] > pivot) {
+            while (a.get(t).getPublished() > pivot) {
                 t++;
             }
             if (s < t) {
-                tmp = a[s];
-                a[s] = a[t];
-                a[t] = tmp;
+                tmp = a.get(s);
+                a.set(s,a.get(t));
+                a.set(t,tmp);
                 s++;
                 t--;
             }
-            if (s == t) {
+            if (s.equals(t)) {
                 s++;
                 t--;
-            }
-            if (s > t) {
-
             }
         }
-
-        return a;
     }
 }
