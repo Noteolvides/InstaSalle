@@ -1,27 +1,28 @@
 package JsonClasses;
 
+
 import java.util.List;
 
-public class Post {
+public class Post{
     private Integer id;
     private Integer published;
     private List<Double> location;
     private String category;
+    private List<String> liked_by;
+    private List<String> commented_by;
 
     @Override
     public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", published=" + published +
-                ", location=" + location +
-                ", category='" + category + '\'' +
-                ", liked_by=" + liked_by +
-                ", commented_by=" + commented_by +
+        return "\n\tPost{" +
+                "\n\t\tid=" + id +
+                "\n\t\t\t, published=" + published +
+                "\n\t\t\t, location=" + location +
+                "\n\t\t\t, category='" + category + '\'' +
+                "\n\t\t\t, liked_by=" + liked_by +
+                "\n\t\t\t, commented_by=" + commented_by +
                 '}';
     }
 
-    private List<String> liked_by;
-    private List<String> commented_by;
 
     public Integer getId() {
         return id;
