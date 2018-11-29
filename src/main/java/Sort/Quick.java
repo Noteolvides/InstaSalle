@@ -9,43 +9,42 @@ public class Quick {
     public void QuickSort(List<Post> a){
         Sort(a,0,a.size()-1);
     }
-    private void Sort(List<Post> a, Integer i, Integer j) {
-        Integer s = 0;
-        Integer t = 0;
+    private void Sort(List<Post> a, int i, int j) {
+
         if (i < j) {
-            particio(a, i, j,s,t);
-            Sort(a, i, t);
-            Sort(a, s, j);
+            int[] aux = particio(a, i, j);
+            Sort(a, i, aux[1]);
+            Sort(a, aux[0], j);
         }
     }
 
 
-    private void particio(List<Post> a, Integer i, Integer j,Integer s,Integer t) {
-        Integer mig, pivot;
+    private int[] particio(List<Post> a, int i, int j) {
+        int mig, pivot;
+        int[] aux = new int[]{i,j};
         Post tmp;
-        s = i;
-        t = j;
         mig = (i + j) / 2;
         pivot = a.get(mig).getPublished();
 
-        while (s <= t) {
-            while (a.get(s).getPublished() < pivot) {
-                s++;
+        while (aux[0] <= aux[1]) {
+            while (a.get(aux[0]).getPublished() < pivot) {
+                aux[0] = aux[0] + 1;
             }
-            while (a.get(t).getPublished() > pivot) {
-                t++;
+            while (a.get(aux[1]).getPublished() > pivot) {
+                aux[1] = aux[1] - 1;
             }
-            if (s < t) {
-                tmp = a.get(s);
-                a.set(s,a.get(t));
-                a.set(t,tmp);
-                s++;
-                t--;
+            if (aux[0] < aux[1]) {
+                tmp = a.get(aux[0]);
+                a.set(aux[0],a.get(aux[1]));
+                a.set(aux[1],tmp);
+                aux[0] = aux[0] + 1;
+                aux[1] = aux[1] - 1;
             }
-            if (s.equals(t)) {
-                s++;
-                t--;
+            if (aux[0] == aux[1]) {
+                aux[0] = aux[0] + 1;
+                aux[1] = aux[1] - 1;
             }
         }
+        return aux;
     }
 }

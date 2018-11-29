@@ -1,5 +1,5 @@
 package Sort;
-
+/*
 public class Merge {
     public static Integer[] ordenaMerge(Integer[] a, Integer i, Integer j){
         Integer mig;
@@ -58,3 +58,4 @@ public class Merge {
         return a;
     }
 }
+*/
