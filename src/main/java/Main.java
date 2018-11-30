@@ -16,7 +16,5 @@ public class Main {
         System.out.println(infomacionUsuarios[0].getPosts());
         quick.QuickSort(infomacionUsuarios[0].getPosts());
         System.out.println(infomacionUsuarios[0].getPosts());
-        ArrayList<int> gus = new ArrayList<int>();
-        gus.sort();
     }
 }
