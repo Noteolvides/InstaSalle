@@ -3,7 +3,7 @@ package JsonClasses;
 
 import java.util.List;
 
-public class Post{
+public class Post implements Comparable<Post>{
     private Integer id;
     private Integer published;
     private List<Double> location;
@@ -72,4 +72,7 @@ public class Post{
         this.commented_by = commented_by;
     }
 
+    public int compareTo(Post o) {
+        return this.published.compareTo(o.published);
+    }
 }
