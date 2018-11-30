@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 
 public class Main {
@@ -15,5 +16,7 @@ public class Main {
         System.out.println(infomacionUsuarios[0].getPosts());
         quick.QuickSort(infomacionUsuarios[0].getPosts());
         System.out.println(infomacionUsuarios[0].getPosts());
+        ArrayList<int> gus = new ArrayList<int>();
+        gus.sort();
     }
 }
