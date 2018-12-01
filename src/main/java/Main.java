@@ -21,11 +21,15 @@ public class Main {
             posts.addAll(i.getPosts());
         }
         ArrayList<Double> location = new ArrayList<Double>();
-        location.add(41.3854363);
-        location.add(2.1730605);
-        quick.QuickSort(posts,new Location(location));
+        location.add(41.4085547);
+        location.add(2.1277131);
+        Location l = new Location(location);
+        for (Post i:posts) {
+            i.setHar(l.calculDist(i.getLocation(),location));
+        }
+        quick.QuickSort(posts,l);
         for (int i = 0; i < posts.size() ; i++) {
-            System.out.println(posts.get(i).getId());
+            System.out.println(posts.get(i).getId() + "--" + posts.get(i).getHar());
         }
     }
 }

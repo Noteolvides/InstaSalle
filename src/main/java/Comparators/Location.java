@@ -14,7 +14,7 @@ public class Location implements Comparator<Post> {
         return Math.pow(Math.sin(theta/2),2);
     }
 
-    private double calculDist(List<Double> p1, List<Double> p2){
+    public double calculDist(List<Double> p1, List<Double> p2){
         Double teta1 = Math.toRadians(p1.get(0));
         Double teta2  = Math.toRadians(p2.get(0));
 
@@ -39,18 +39,9 @@ public class Location implements Comparator<Post> {
 
 
     public int compare(Post o1, Post o2) {
-       double dist2 = calculDist(o1.getLocation(),location);
-       double dist1  = calculDist(o2.getLocation(),location);
-
-        if (dist2 == dist1){
-            return 0;
-        }
-        if (dist2 > dist1){
-            return -1;
-        }
-        if (dist2 < dist2){
-            return 1;
-        }
-        return 0;
+       Double dist1 = calculDist(o1.getLocation(),location);
+       Double dist2  = calculDist(o2.getLocation(),location);
+       return dist1.compareTo(dist2);
     }
+
 }

@@ -10,6 +10,7 @@ public class Post{
     private String category;
     private List<String> liked_by;
     private List<String> commented_by;
+    private double har;
 
     public Post() {
     }
@@ -73,5 +74,13 @@ public class Post{
 
     public void setCommented_by(List<String> commented_by) {
         this.commented_by = commented_by;
+    }
+
+    public double getHar() {
+        return har;
+    }
+
+    public void setHar(double har) {
+        this.har = har;
     }
 }

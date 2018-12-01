@@ -1,8 +1,6 @@
 package Sort;
 
 import JsonClasses.Post;
-
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -25,7 +23,7 @@ public class Quick {
         int mig;
         int[] aux = new int[]{i,j};
         Post tmp;
-        mig = (i + j) / 2;
+        mig = Math.round((float)(i + j) / 2);
 
         while (aux[0] <= aux[1]) {
             while (this.c.compare(a.get(aux[0]),a.get(mig)) < 0) {
@@ -40,10 +38,11 @@ public class Quick {
                 a.set(aux[1],tmp);
                 aux[0] = aux[0] + 1;
                 aux[1] = aux[1] - 1;
-            }
-            if (aux[0] == aux[1]) {
-                aux[0] = aux[0] + 1;
-                aux[1] = aux[1] - 1;
+            }else{
+                if (aux[0] == aux[1]) {
+                    aux[0] = aux[0] + 1;
+                    aux[1] = aux[1] - 1;
+                }
             }
         }
         return aux;
