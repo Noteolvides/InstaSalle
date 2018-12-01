@@ -11,7 +11,6 @@ public class Location implements Comparator<Post> {
     }
 
     public int compare(Post o1, Post o2) {
-        System.out.println(this.x);
-        return o2.getPublished().compareTo(o1.getPublished());
+        return o2.getId().compareTo(o1.getId());
     }
 }

@@ -22,7 +22,7 @@ public class Main {
             posts.addAll(i.getPosts());
         }
 
-        quick.QuickSort(posts,new Ascendent());
+        quick.QuickSort(posts,new Location(2));
         for (int i = 0; i < posts.size() ; i++) {
             System.out.println(posts.get(i).getPublished());
         }
