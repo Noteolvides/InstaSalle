@@ -1,15 +1,18 @@
 package JsonClasses;
 
-
+import java.util.Comparator;
 import java.util.List;
 
-public class Post implements Comparable<Post>{
+public class Post{
     private Integer id;
     private Integer published;
     private List<Double> location;
     private String category;
     private List<String> liked_by;
     private List<String> commented_by;
+
+    public Post() {
+    }
 
     @Override
     public String toString() {
@@ -71,8 +74,9 @@ public class Post implements Comparable<Post>{
     public void setCommented_by(List<String> commented_by) {
         this.commented_by = commented_by;
     }
-
+    /*
     public int compareTo(Post o) {
         return this.published.compareTo(o.published);
     }
+    */
 }
