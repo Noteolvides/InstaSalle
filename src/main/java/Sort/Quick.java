@@ -21,7 +21,6 @@ public class Quick {
         }
     }
 
-
     private int[] particio(List<Post> a, int i, int j) {
         int mig;
         int[] aux = new int[]{i,j};

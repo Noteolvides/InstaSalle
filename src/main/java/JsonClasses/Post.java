@@ -1,6 +1,6 @@
 package JsonClasses;
 
-import java.util.Comparator;
+
 import java.util.List;
 
 public class Post{
@@ -74,9 +74,4 @@ public class Post{
     public void setCommented_by(List<String> commented_by) {
         this.commented_by = commented_by;
     }
-    /*
-    public int compareTo(Post o) {
-        return this.published.compareTo(o.published);
-    }
-    */
 }
