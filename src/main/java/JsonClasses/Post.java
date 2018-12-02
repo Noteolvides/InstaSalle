@@ -52,8 +52,31 @@ public class Post{
         this.location = location;
     }
 
-    public String getCategory() {
-        return category;
+    public int getCategory() {
+        if (category.equals("landscape")){
+            return 0;
+        }else if(category.equals("food")){
+            return 1;
+        }else if(category.equals("sports")){
+            return 2;
+        }else if(category.equals("style")){
+            return 3;
+        }else if(category.equals("animals")){
+            return 4;
+        }else if(category.equals("tv_shows")){
+            return 5;
+        }else if(category.equals("science_tech")){
+            return 6;
+        }else if(category.equals("music")){
+            return 7;
+        }else if(category.equals("travel")){
+            return 8;
+        }else if(category.equals("architecture")){
+            return 9;
+        }else if(category.equals("fitness")){
+            return 10;
+        }
+        return 0;
     }
 
     public void setCategory(String category) {

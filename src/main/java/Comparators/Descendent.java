@@ -2,7 +2,9 @@ package Comparators;
 
 import JsonClasses.Post;
 
-public class Descendent {
+import java.util.Comparator;
+
+public class Descendent implements Comparator<Post> {
     
     public Descendent() {
     }
