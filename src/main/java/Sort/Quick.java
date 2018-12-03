@@ -8,10 +8,7 @@ import java.util.List;
 public class Quick {
     private Comparator<Post> c;
 
-    public Quick() {
-    }
-
-    public  void QuickSort(List<Post> a,Comparator<Post> c){
+    public void QuickSort(List<Post> a,Comparator<Post> c){
         this.c = c;
         Sort(a,0,a.size()-1);
     }
