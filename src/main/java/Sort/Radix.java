@@ -1,8 +1,8 @@
 package Sort;
 
 import JsonClasses.Post;
-import javafx.geometry.Pos;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class Radix {
     }
 
     private static void sort(List<Post> a, int n, int exp){
-        List<Post> resultat = null;
+        List<Post> resultat = new ArrayList<Post>();
         int counter[] = new int[10];
         Arrays.fill(counter,0);
 
