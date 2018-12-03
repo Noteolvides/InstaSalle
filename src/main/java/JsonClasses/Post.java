@@ -11,6 +11,16 @@ public class Post{
     private List<String> liked_by;
     private List<String> commented_by;
 
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    private String creator;
+
     public Post() {
     }
 

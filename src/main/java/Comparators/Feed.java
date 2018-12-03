@@ -15,6 +15,14 @@ public class Feed implements Comparator<Post> {
             this.getPercentajeTotal = getPercentajeTotal;
         }
 
+        @Override
+        public String toString() {
+            return "informationOfLlikeness{" +
+                    "name='" + name + '\'' +
+                    ", getPercentajeTotal=" + getPercentajeTotal +
+                    '}';
+        }
+
         public String name;
         public float getPercentajeTotal;
     }
@@ -30,10 +38,15 @@ public class Feed implements Comparator<Post> {
         int comments = 0;
 
         for (UserConnections i: connections) {
-            a = Integer.parseInt(i.getUsername().replace("user",""));
+            String username = i.getUsername();
+            a = Integer.parseInt(username.replace("user",""));
             likes += i.getLikes();
             comments += i.getComments();
-            posts.addAll(infomacionUsuarios[a].getPosts());
+            List<Post> aux = infomacionUsuarios[a].getPosts();
+            for (Post j: aux) {
+                j.setCreator(username);
+            }
+            posts.addAll(aux);
         }
 
         float h;
@@ -49,14 +62,18 @@ public class Feed implements Comparator<Post> {
         }
         for (int i = 0; i < likelihood.length; i++) {
             likelihood[i] = (likelihood[i]*100)/likes;
+            System.out.println(likelihood[i]);
         }
         posts.sort(new Comparator<Post>() {
             public int compare(Post o1, Post o2) {
-                Float likelihoodO2 = likelihood[o2.getCategory()];
-                Float likelihoodO1 = likelihood[o1.getCategory()];
+                Integer likelihoodO2 = (int)likelihood[o2.getCategory()]*60*60*12 + o2.getPublished();
+                Integer likelihoodO1 = (int)likelihood[o1.getCategory()]*60*60*12 + o1.getPublished();
                 return likelihoodO2.compareTo(likelihoodO1);
             }
         });
+        for (informationOfLlikeness i:informationOfLlikenesses) {
+            System.out.println(i);
+        }
         System.out.println(posts);
     }
 
@@ -67,8 +84,22 @@ public class Feed implements Comparator<Post> {
     }
 
     public int compare(Post o1, Post o2) {
-        Float likelihoodO2 = likelihood[o2.getCategory()];
-        Float likelihoodO1 = likelihood[o1.getCategory()];
+        float llikenessOfUser1 = 0;
+        float llikenessOfUser2 = 0;
+        for (informationOfLlikeness i : informationOfLlikenesses) {
+            if(i.name == o1.getCreator()){
+                llikenessOfUser1 = i.getPercentajeTotal;
+                break;
+            }
+        }
+        for (informationOfLlikeness i : informationOfLlikenesses) {
+            if(i.name == o2.getCreator()){
+                llikenessOfUser2 = i.getPercentajeTotal;
+                break;
+            }
+        }
+        Integer likelihoodO2 = (int)likelihood[o2.getCategory()]*60*60*12 + (int)llikenessOfUser1*60*60*12 + o2.getPublished();
+        Integer likelihoodO1 = (int)likelihood[o1.getCategory()]*60*60*12 + (int)llikenessOfUser2*60*60*12 + o1.getPublished();
         return likelihoodO2.compareTo(likelihoodO1);
     }
 }
