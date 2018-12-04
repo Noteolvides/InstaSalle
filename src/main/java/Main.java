@@ -11,9 +11,13 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
-        User[] infomacionUsuarios = gson.fromJson(new FileReader("m_dataset.json"), User[].class);
+        User[] infomacionUsuarios = gson.fromJson(new FileReader("xs_dataset.json"), User[].class);
         List<UserConnections> connections =  infomacionUsuarios[0].getConnections();
-        Feed f = new Feed(connections,infomacionUsuarios);
-        f.getInformation();
+        //Feed f = new Feed(connections,infomacionUsuarios);
+        //f.getInformation();
+        Ascendent a = new Ascendent();
+        Quick q = new Quick();
+        q.QuickSort(infomacionUsuarios[0].getPosts(),a);
+        System.out.println(infomacionUsuarios[0].getPosts());
     }
 }

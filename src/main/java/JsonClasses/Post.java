@@ -33,7 +33,7 @@ public class Post{
                 "\n\t\t\t, category='" + category + '\'' +
                 "\n\t\t\t, liked_by=" + liked_by +
                 "\n\t\t\t, commented_by=" + commented_by +
-                "\n\t\t\t, creator='" + creator + '\'' +
+                /*"\n\t\t\t, creator='" + creator + '\'' +*/
                 '}';
     }
 
