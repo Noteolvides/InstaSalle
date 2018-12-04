@@ -1,10 +1,6 @@
-import Comparators.Ascendent;
-import Comparators.Descendent;
-import Comparators.Feed;
-import JsonClasses.Post;
-import JsonClasses.User;
-import JsonClasses.UserConnections;
-import Sort.Quick;
+import Comparators.*;
+import JsonClasses.*;
+import Sort.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
