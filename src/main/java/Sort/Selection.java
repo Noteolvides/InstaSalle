@@ -13,10 +13,10 @@ public class Selection {
 
     public void SelectionSort(List<Post> a, Comparator<Post> c){
         this.c = c;
-        Sort(a,a.size()-1);
+        Selection(a,a.size()-1);
     }
 
-    public void Sort(List<Post> a, int n){
+    private void Selection(List<Post> a, int n){
         int minim;
         Post aux;
 
