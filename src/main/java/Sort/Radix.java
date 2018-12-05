@@ -4,21 +4,31 @@ import JsonClasses.Post;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /*
 public class Radix {
-    private static Post maxValue(List<Post> a, int n){
+    private Comparator<Post> c;
+
+    public Radix() {
+    }
+
+    public void RadixSort(List<Post> a, Comparator<Post> c){
+        this.c = c;
+        Radix(a,a.size()-1);
+    }
+    private Post maxValue(List<Post> a, int n){
         Post max = a.get(0);
         for (int i = 1; i < n;i++){
-            if (a.get(i).getId() > max.getId()){
+            if (this.c.compare(a.get(i),max) > 0){
                 max = a.get(i);
             }
         }
         return max;
     }
 
-    private static void sort(List<Post> a, int n, int exp){
+    private void Sort(List<Post> a, int n, int exp){
         List<Post> resultat = new ArrayList<Post>();
         int counter[] = new int[10];
         Arrays.fill(counter,0);
@@ -40,11 +50,11 @@ public class Radix {
         }
     }
 
-    public static void RadixSort(List<Post> a, int n){
+    private void Radix(List<Post> a, int n){
         Post m = maxValue(a, n);
 
         for (int exp = 1; m.getId()/exp > 0; exp *= 10){
-            sort(a, n, exp);
+            Sort(a, n, exp);
         }
     }
 }*/

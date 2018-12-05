@@ -2,17 +2,28 @@ package Sort;
 
 import JsonClasses.Post;
 
+import java.util.Comparator;
 import java.util.List;
-/*
+
 public class Selection {
-    public static void SelectionSort(List<Post> a, int n){
+    private Comparator<Post> c;
+
+    public Selection() {
+    }
+
+    public void SelectionSort(List<Post> a, Comparator<Post> c){
+        this.c = c;
+        Sort(a,a.size()-1);
+    }
+
+    public void Sort(List<Post> a, int n){
         int minim;
         Post aux;
 
         for(int i = 0; i < n-1; i++) {
             minim = i;
             for (int j = i + 1; j < n; j++) {
-                if (a.get(j).getId() < a.get(minim).getId()){
+                if (this.c.compare(a.get(i),a.get(minim)) < 0){
                     minim = j;
                 }
             }
@@ -21,5 +32,5 @@ public class Selection {
             a.set(i, aux);
         }
     }
-}*/
+}
 
