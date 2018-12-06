@@ -13,7 +13,7 @@ public class Selection {
 
     public void SelectionSort(List<Post> a, Comparator<Post> c){
         this.c = c;
-        Selection(a,a.size()-1);
+        Selection(a,a.size());
     }
 
     private void Selection(List<Post> a, int n){
@@ -23,7 +23,7 @@ public class Selection {
         for(int i = 0; i < n-1; i++) {
             minim = i;
             for (int j = i + 1; j < n; j++) {
-                if (this.c.compare(a.get(i),a.get(minim)) < 0){
+                if (this.c.compare(a.get(j),a.get(minim)) < 0){
                     minim = j;
                 }
             }
