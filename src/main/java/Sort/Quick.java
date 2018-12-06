@@ -24,13 +24,14 @@ public class Quick {
         int mig;
         int[] aux = new int[]{i,j};
         Post tmp;
-        mig = Math.round((float)(i + j) / 2);
+        mig = ((i + j) / 2);
+        Post pivot = a.get(mig);
 
         while (aux[0] <= aux[1]) {
-            while (this.c.compare(a.get(aux[0]),a.get(mig)) < 0) {
+            while (this.c.compare(a.get(aux[0]),pivot) < 0) {
                 aux[0] = aux[0] + 1;
             }
-            while (this.c.compare(a.get(aux[1]),a.get(mig)) > 0) {
+            while (this.c.compare(a.get(aux[1]),pivot) > 0) {
                 aux[1] = aux[1] - 1;
             }
             if (aux[0] < aux[1]) {
@@ -39,11 +40,10 @@ public class Quick {
                 a.set(aux[1],tmp);
                 aux[0] = aux[0] + 1;
                 aux[1] = aux[1] - 1;
-            }else{
-                if (aux[0] == aux[1]) {
-                    aux[0] = aux[0] + 1;
-                    aux[1] = aux[1] - 1;
-                }
+            }
+            if (aux[0] == aux[1]) {
+                aux[0] = aux[0] + 1;
+                aux[1] = aux[1] - 1;
             }
         }
         return aux;

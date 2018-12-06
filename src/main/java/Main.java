@@ -56,14 +56,14 @@ public class Main {
             case 1:
                 System.out.println("\tAscendente:");
                 Ascendent a = new Ascendent();
-               /* Quick q = new Quick();
-                q.QuickSort(infomacionUsuarios[0].getPosts(),a);*/
+                Quick q = new Quick();
+                q.QuickSort(infomacionUsuarios[0].getPosts(),a);
                /* Merge m = new Merge();
                 m.MergeSort(infomacionUsuarios[0].getPosts(),a);*/
                 /*Radix r = new Radix();
                 r.RadixSort(infomacionUsuarios[0].getPosts(),a);*/
-                Selection s = new Selection();
-                s.SelectionSort(infomacionUsuarios[0].getPosts(),a);
+               /* Selection s = new Selection();
+                s.SelectionSort(infomacionUsuarios[0].getPosts(),a);*/
                 System.out.println(infomacionUsuarios[0].getPosts());
                 break;
             case 2:
