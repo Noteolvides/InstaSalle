@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-
+//Solo ordena por ubicacion
 public class Radix {
     private Comparator<Post> c;
 
@@ -18,11 +18,12 @@ public class Radix {
         this.c = c;
         sort(a,a.size());
     }
-    private int maxValue(List<Post> a, int n){
-        int max = a.get(0).getPublished();
+    private Post maxValue(List<Post> a, int n){
+        Post max = a.get(0);
+
         for (int i = 1; i < n;i++){
-            if (a.get(i).getPublished() > max){
-                max = a.get(i).getPublished();
+            if (this.c.compare(a.get(i),max) > 0){
+                max = a.get(i);
             }
         }
         return max;
@@ -30,10 +31,10 @@ public class Radix {
 
     private void countSort(List<Post> a, int n, int exp){
         Post[] resultat = new Post[n];
-        int counter[] = new int[maxValue(a, n)];
+        int counter[] = new int[n];
 
         for (int i = 0; i < n; ++i){
-            counter[(a.get(i).getPublished()/exp)%10]++;
+            counter[(a.get(i).getPublished() / exp) % 10]++;
         }
         for (int i = 1; i < n; ++i){
             counter[i] += counter[i - 1];
@@ -50,7 +51,7 @@ public class Radix {
     }
 
     private void sort(List<Post> a, int n){
-        int m = maxValue(a, n);
+        int m = maxValue(a, n).getPublished();
 
         for (int exp = 1; m/exp > 0; exp *= 10){
             countSort(a, n, exp);

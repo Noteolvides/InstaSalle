@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-
+//Error
 public class Merge {
    private Comparator<Post> c;
 
