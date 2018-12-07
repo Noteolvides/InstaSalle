@@ -6,19 +6,9 @@ import java.util.Comparator;
 import java.util.List;
 
 
-//Error
 
 
 public class Merge {
-    /*
-    public static void main(String[] args) throws FileNotFoundException {
-        Gson gson = new GsonBuilder().create();
-        User[] infomacionUsuarios = gson.fromJson(new FileReader("xs_dataset.json"), User[].class);
-        Merge m = new Merge();
-        m.MergeSort(infomacionUsuarios[0].getPosts(),new Descendent());
-        System.out.println(infomacionUsuarios[0].getPosts());
-    }
-    */
    private Comparator<Post> c;
 
     public Merge() {
