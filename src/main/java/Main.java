@@ -50,8 +50,8 @@ public class Main {
                 Ascendent a = new Ascendent();
                 switch(sort) {
                     case 1:
-                        /* Merge m = new Merge();
-                        m.MergeSort(infomacionUsuarios[0].getPosts(),a);*/
+                        Merge m = new Merge();
+                        m.MergeSort(infomacionUsuarios[0].getPosts(),a);
                         break;
                     case 2:
                         Quick q = new Quick();
@@ -62,8 +62,8 @@ public class Main {
                         s.SelectionSort(infomacionUsuarios[0].getPosts(),a);
                         break;
                     case 4:
-                        /*Radix r = new Radix();
-                        r.RadixSort(infomacionUsuarios[0].getPosts(),a);*/
+                        Radix r = new Radix();
+                        r.RadixSort(infomacionUsuarios[0].getPosts(),a);
                         break;
                     default:
                         System.out.println("Error! La opcion introducida no existe!");
@@ -79,8 +79,8 @@ public class Main {
                 Location l = new Location(loc);
                 switch(sort) {
                     case 1:
-                        /* Merge m = new Merge();
-                        m.MergeSort(infomacionUsuarios[0].getPosts(),l);*/
+                        Merge m = new Merge();
+                        m.MergeSort(infomacionUsuarios[0].getPosts(),l);
                         break;
                     case 2:
                         Quick q = new Quick();
@@ -91,8 +91,8 @@ public class Main {
                         s.SelectionSort(infomacionUsuarios[0].getPosts(),l);
                         break;
                     case 4:
-                        /*Radix r = new Radix();
-                        r.RadixSort(infomacionUsuarios[0].getPosts(),l);*/
+                        Radix r = new Radix();
+                        r.RadixSort(infomacionUsuarios[0].getPosts(),l);
                         break;
                     default:
                         System.out.println("Error! La opcion introducida no existe!");
@@ -107,8 +107,8 @@ public class Main {
                 f.getInformation();
                 switch(sort) {
                     case 1:
-                        /* Merge m = new Merge();
-                        m.MergeSort(infomacionUsuarios[0].getPosts(),f);*/
+                        Merge m = new Merge();
+                        m.MergeSort(infomacionUsuarios[0].getPosts(),f);
                         break;
                     case 2:
                         Quick q = new Quick();
@@ -119,8 +119,8 @@ public class Main {
                         s.SelectionSort(infomacionUsuarios[0].getPosts(),f);
                         break;
                     case 4:
-                        /*Radix r = new Radix();
-                        r.RadixSort(infomacionUsuarios[0].getPosts(),f);*/
+                        Radix r = new Radix();
+                        r.RadixSort(infomacionUsuarios[0].getPosts(),f);
                         break;
                     default:
                         System.out.println("Error! La opcion introducida no existe!");

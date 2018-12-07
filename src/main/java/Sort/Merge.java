@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-/*
+
 public class Merge {
    private Comparator<Post> c;
 
@@ -68,4 +68,4 @@ public class Merge {
             cursor++;
         }
     }
-}*/
+}
