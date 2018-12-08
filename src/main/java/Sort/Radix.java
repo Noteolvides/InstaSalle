@@ -1,29 +1,12 @@
 package Sort;
 
 import Comparators.Comparators;
-import Comparators.Ascendent;
 import JsonClasses.Post;
-import JsonClasses.User;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.Collections;
 import java.util.List;
 
 //Solo ordena por ubicacion
 public class Radix {
-    public static void main(String[] args) throws FileNotFoundException {
-        Gson gson = new GsonBuilder().create();
-        User[] infomacionUsuarios = gson.fromJson(new FileReader("xs_dataset.json"), User[].class);
-        Ascendent d = new Ascendent();
-        Radix r = new Radix();
-        r.RadixSort(infomacionUsuarios[0].getPosts(),d);
-        for (Post i:infomacionUsuarios[0].getPosts()) {
-            System.out.println(i.getPublished());
-        }
-    }
     private Comparators<Post> c;
 
     public Radix() {

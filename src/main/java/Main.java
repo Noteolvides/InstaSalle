@@ -14,126 +14,73 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
         User[] infomacionUsuarios = gson.fromJson(new FileReader("xs_dataset.json"), User[].class);
+        menu(infomacionUsuarios, args);
+    }
+
+    private static void menu(User[] infomacionUsuarios, String[] args) {
         int sort = Integer.parseInt(args[0]);
         int segons = Integer.parseInt(args[1]);
         int user = 0;
-        if (segons == 3){
+        List<Double> loc = new ArrayList<Double>();
+        if (segons == 2) {
+            //loc.add((double) Float.parseFloat(args[2]));
+            loc.add(0.0);
+            loc.add(0.0);
+            //loc.add((double) Float.parseFloat(args[3]));
+        }
+        if (segons == 3) {
             user = Integer.parseInt(args[2]);
         }
 
-        menu(sort, segons, infomacionUsuarios,user);
-    }
-
-    private static void menu(int sort, int segons, User[] infomacionUsuarios,int user){
-        switch(sort) {
-            case 1:
-                System.out.println("Merge Sort:");
-                menu2(sort, segons, infomacionUsuarios,user);
-                break;
-            case 2:
-                System.out.println("Quick Sort:");
-                menu2(sort, segons, infomacionUsuarios,user);
-                break;
-            case 3:
-                System.out.println("Selection Sort:");
-                menu2(sort, segons, infomacionUsuarios,user);
-                break;
-            case 4:
-                System.out.println("Radix Sort:");
-                menu2(sort, segons, infomacionUsuarios,user);
-                break;
-            default:
-                System.out.println("Error! La opcion introducida no existe!");
-                break;
+        ArrayList<Post> posts = new ArrayList<Post>();
+        for (User i : infomacionUsuarios) {
+            posts.addAll(i.getPosts());
         }
-    }
-
-    private static void menu2(int sort, int segons, User[] infomacionUsuarios,int user){
-        switch(segons) {
+        switch (segons) {
             case 1:
-                System.out.println("\tAscendente:");
-                Ascendent a = new Ascendent();
-                switch(sort) {
-                    case 1:
-                        Merge m = new Merge();
-                        m.MergeSort(infomacionUsuarios[0].getPosts(),a);
-                        break;
-                    case 2:
-                        Quick q = new Quick();
-                        q.QuickSort(infomacionUsuarios[0].getPosts(),a);
-                        break;
-                    case 3:
-                        Selection s = new Selection();
-                        s.SelectionSort(infomacionUsuarios[0].getPosts(),a);
-                        break;
-                    case 4:
-                        Radix r = new Radix();
-                        r.RadixSort(infomacionUsuarios[0].getPosts(),a);
-                        break;
-                    default:
-                        System.out.println("Error! La opcion introducida no existe!");
-                        break;
-                }
-                System.out.println(infomacionUsuarios[0].getPosts());
+                System.out.println("\tPublicacion:");
+                Descendent d = new Descendent();
+                menu2(posts, sort, d);
+                System.out.println(posts);
                 break;
             case 2:
                 System.out.println("\tUbicacion:");
-                List<Double> loc = new ArrayList<Double>();
-                loc.add(0.0);
-                loc.add(0.0);
                 Location l = new Location(loc);
-                switch(sort) {
-                    case 1:
-                        Merge m = new Merge();
-                        m.MergeSort(infomacionUsuarios[0].getPosts(),l);
-                        break;
-                    case 2:
-                        Quick q = new Quick();
-                        q.QuickSort(infomacionUsuarios[0].getPosts(),l);
-                        break;
-                    case 3:
-                        Selection s = new Selection();
-                        s.SelectionSort(infomacionUsuarios[0].getPosts(),l);
-                        break;
-                    case 4:
-                        Radix r = new Radix();
-                        r.RadixSort(infomacionUsuarios[0].getPosts(),l);
-                        break;
-                    default:
-                        System.out.println("Error! La opcion introducida no existe!");
-                        break;
-                }
-                System.out.println(infomacionUsuarios[0].getPosts());
+                menu2(posts, sort, l);
+                System.out.println(posts);
                 break;
             case 3:
                 System.out.println("\tCombinacion de prioridades:");
-                Feed f = new Feed(infomacionUsuarios,user);
-                List<Post> posts = f.getInformation();
-                switch(sort) {
-                    case 1:
-                        Merge m = new Merge();
-                        m.MergeSort(posts,f);
-                        break;
-                    case 2:
-                        Quick q = new Quick();
-                        q.QuickSort(posts,f);
-                        break;
-                    case 3:
-                        Selection s = new Selection();
-                        s.SelectionSort(posts,f);
-                        break;
-                    case 4:
-                        Radix r = new Radix();
-                        r.RadixSort(posts,f);
-                        break;
-                    default:
-                        System.out.println("Error! La opcion introducida no existe!");
-                        break;
-                }
-                System.out.println(posts);
+                Feed f = new Feed(infomacionUsuarios, user);
+                List<Post> postsUb = f.getInformation();
+                menu2(postsUb, sort, f);
+        }
+    }
+
+    private static void menu2(List<Post> posts, int sort, Comparators<Post> c) {
+        switch (sort) {
+            case 1:
+                System.out.println("Merge Sort");
+                Merge m = new Merge();
+                m.MergeSort(posts, c);
+                break;
+            case 2:
+                System.out.println("Quick Sort");
+                Quick q = new Quick();
+                q.QuickSort(posts, c);
+                break;
+            case 3:
+                System.out.println("Selection Sort");
+                Selection s = new Selection();
+                s.SelectionSort(posts, c);
+                break;
+            case 4:
+                System.out.println("Radix Sort");
+                Radix r = new Radix();
+                r.RadixSort(posts, c);
                 break;
             default:
-                System.out.println("\tError! La opcion introducida no existe!");
+                System.out.println("Error! La opcion introducida no existe!");
                 break;
         }
     }
