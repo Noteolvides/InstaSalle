@@ -65,9 +65,9 @@ public class Main {
                 System.out.println("Merge Sort");
                 Merge m = new Merge();
                 start = System.currentTimeMillis();
+                m.MergeSort(posts, c);
                 end = System.currentTimeMillis();
                 System.out.println(end-start);
-                m.MergeSort(posts, c);
                 break;
             case 2:
                 System.out.println("Quick Sort");
