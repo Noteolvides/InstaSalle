@@ -14,21 +14,21 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Gson gson = new GsonBuilder().create();
-        User[] infomacionUsuarios = gson.fromJson(new FileReader("xs_dataset.json"), User[].class);
+        User[] infomacionUsuarios = gson.fromJson(new FileReader(args[0]), User[].class);
         menu(infomacionUsuarios, args);
     }
 
     private static void menu(User[] infomacionUsuarios, String[] args) {
-        int sort = Integer.parseInt(args[0]);
-        int segons = Integer.parseInt(args[1]);
+        int sort = Integer.parseInt(args[1]);
+        int segons = Integer.parseInt(args[2]);
         int user = 0;
         List<Double> loc = new ArrayList<Double>();
         if (segons == 2) {
-            loc.add((double) Float.parseFloat(args[2]));
             loc.add((double) Float.parseFloat(args[3]));
+            loc.add((double) Float.parseFloat(args[4]));
         }
         if (segons == 3) {
-            user = Integer.parseInt(args[2]);
+            user = Integer.parseInt(args[3]);
         }
 
         ArrayList<Post> posts = new ArrayList<Post>();
