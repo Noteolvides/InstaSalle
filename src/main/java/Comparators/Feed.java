@@ -14,6 +14,8 @@ public class Feed implements Comparator<Post> {
             this.name = name;
             this.getPercentajeTotal = getPercentajeTotal;
         }
+        private String name;
+        private float getPercentajeTotal;
 
         @Override
         public String toString() {
@@ -22,99 +24,77 @@ public class Feed implements Comparator<Post> {
                     ", getPercentajeTotal=" + getPercentajeTotal +
                     '}';
         }
-
-        public String name;
-        public float getPercentajeTotal;
     }
     private List<UserConnections> connections;
     private User[] infomacionUsuarios;
-    private List<Post> posts = new ArrayList<Post>();
-    private float[] likelihood = new float[11];
+    private List<Post> postsFeed = new ArrayList<Post>();
+    private float[] howMuchIlikeAcategory = new float[11];
     private List<informationOfLlikeness> informationOfLlikenesses = new ArrayList<informationOfLlikeness>();
+    private int user;
 
-    public void getInformation(){
+
+    public Feed(User[] infomacionUsuarios,int user) {
+        this.user = user;
+        this.connections = infomacionUsuarios[user].getConnections();
+        this.infomacionUsuarios = infomacionUsuarios;
+    }
+
+    public List<Post> getInformation(){
         int a;
-        int likes = 0;
-        int comments = 0;
+        int allLikes = 0;
+        int allComments = 0;
+        List<Post> postsFeed = new ArrayList<Post>();
 
+        //Por cada conexion con cada usuario guardamos el numero de likes que le ha dado el y el numero de comentarios.
+        //Ademas ponemos una etiqueta a cada post para saber quien ha sido el creador del post, y los guardamos en un array que devolveremos.
         for (UserConnections i: connections) {
             String username = i.getUsername();
             a = Integer.parseInt(username.replace("user",""));
-            likes += i.getLikes();
-            comments += i.getComments();
+            allLikes += i.getLikes();
+            allComments += i.getComments();
             List<Post> aux = infomacionUsuarios[a].getPosts();
             for (Post j: aux) {
                 j.setCreator(username);
             }
-            posts.addAll(aux);
+            postsFeed.addAll(aux);
         }
 
-        float h;
+        //Obetenemos un portcentaje de cuanto le gusta un usuario, para nosotros los likes y los comentarios valen lo mismo un 50%
+        float howMuchILikeYou;
         for (UserConnections i:connections){
-            h = (float)((float)i.getLikes()/likes + (float)i.getComments()/comments)*100/2;
-            informationOfLlikenesses.add(new informationOfLlikeness(i.getUsername(),h));
+            howMuchILikeYou = (float)((float)i.getLikes()/allLikes + (float)i.getComments()/allComments)*100/2;
+            informationOfLlikenesses.add(new informationOfLlikeness(i.getUsername(),howMuchILikeYou));
         }
 
-        for (Post i : posts) {
-            if (i.getLiked_by().contains(infomacionUsuarios[0].getUsername())){
-                likelihood[i.getCategory()] += 1.0;
+        //Ahora obtenemos cuanto nos gusta una categoria
+        for (Post i : postsFeed) {
+            if (i.getLiked_by().contains(infomacionUsuarios[this.user].getUsername())){
+                howMuchIlikeAcategory[i.getCategory()] += 1.0;
             }
         }
-        for (int i = 0; i < likelihood.length; i++) {
-            likelihood[i] = (likelihood[i]*100)/likes;
-            System.out.println(likelihood[i]);
+
+        System.out.println("categorias");
+        //Obtenemos el porcentaje
+        for (int i = 0; i < howMuchIlikeAcategory.length; i++) {
+            howMuchIlikeAcategory[i] = (howMuchIlikeAcategory[i]*100)/allLikes;
         }
-        posts.sort(new Comparator<Post>() {
-            public int compare(Post o1, Post o2) {float llikenessOfUser1 = 0;
-                float llikenessOfUser2 = 0;
-                for (informationOfLlikeness i : informationOfLlikenesses) {
-                    if(i.name == o1.getCreator()){
-                        llikenessOfUser1 = i.getPercentajeTotal;
-                        break;
-                    }
+
+        //Por fin obetenemos cuanto nos gusta una persona
+        for (Post i:postsFeed) {
+            float llikenessOfUser = 0;
+            for (informationOfLlikeness j : informationOfLlikenesses) {
+                if(j.name.equals(i.getCreator())){
+                    llikenessOfUser = j.getPercentajeTotal;
+                    break;
                 }
-                for (informationOfLlikeness i : informationOfLlikenesses) {
-                    if(i.name == o2.getCreator()){
-                        llikenessOfUser2 = i.getPercentajeTotal;
-                        break;
-                    }
-                }
-                Integer likelihoodO2 = (int)likelihood[o2.getCategory()]*60*60*12 + (int)llikenessOfUser1*60*60*12 + o2.getPublished();
-                //System.out.println(llikenessOfUser2 + "-" + llikenessOfUser1);
-                Integer likelihoodO1 = (int)likelihood[o1.getCategory()]*60*60*12 + (int)llikenessOfUser2*60*60*12 + o1.getPublished();
-                return likelihoodO2.compareTo(likelihoodO1);
             }
-        });
-        for (informationOfLlikeness i:informationOfLlikenesses) {
-            System.out.println(i);
+            i.setNewPublised((int) (howMuchIlikeAcategory[i.getCategory()]*60*60*12) + (int)(llikenessOfUser*60*60*12) + i.getPublished());
         }
-        System.out.println(posts);
+        return postsFeed;
     }
 
-
-    public Feed(List<UserConnections> connections,User[] infomacionUsuarios) {
-        this.connections = connections;
-        this.infomacionUsuarios = infomacionUsuarios;
-    }
 
     public int compare(Post o1, Post o2) {
-        float llikenessOfUser1 = 0;
-        float llikenessOfUser2 = 0;
-        for (informationOfLlikeness i : informationOfLlikenesses) {
-            if(i.name == o1.getCreator()){
-                llikenessOfUser1 = i.getPercentajeTotal;
-                break;
-            }
-        }
-        for (informationOfLlikeness i : informationOfLlikenesses) {
-            if(i.name == o2.getCreator()){
-                llikenessOfUser2 = i.getPercentajeTotal;
-                break;
-            }
-        }
-        Integer likelihoodO2 = (int)likelihood[o2.getCategory()]*60*60*12 + (int)llikenessOfUser1*60*60*12 + o2.getPublished();
-        System.out.println(llikenessOfUser2 + "-" + llikenessOfUser1);
-        Integer likelihoodO1 = (int)likelihood[o1.getCategory()]*60*60*12 + (int)llikenessOfUser2*60*60*12 + o1.getPublished();
-        return likelihoodO2.compareTo(likelihoodO1);
+        return o2.getNewPublised().compareTo(o1.getNewPublised());
     }
 }

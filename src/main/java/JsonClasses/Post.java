@@ -10,7 +10,16 @@ public class Post{
     private String category;
     private List<String> liked_by;
     private List<String> commented_by;
+    private Integer newPublised;
 
+
+    public Integer getNewPublised() {
+        return newPublised;
+    }
+
+    public void setNewPublised(Integer newPublised) {
+        this.newPublised = newPublised;
+    }
     public String getCreator() {
         return creator;
     }
@@ -33,7 +42,8 @@ public class Post{
                 "\n\t\t\t, category='" + category + '\'' +
                 "\n\t\t\t, liked_by=" + liked_by +
                 "\n\t\t\t, commented_by=" + commented_by +
-                /*"\n\t\t\t, creator='" + creator + '\'' +*/
+                //"\n\t\t\t, creator='" + creator + '\'' +
+                //"\n\t\t\t, published2='" + newPublised + '\'' +
                 '}';
     }
 
