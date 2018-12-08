@@ -5,10 +5,9 @@ import JsonClasses.User;
 import JsonClasses.UserConnections;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
-public class Feed implements Comparator<Post> {
+public class Feed implements Comparators<Post> {
     private class informationOfLlikeness{
         public informationOfLlikeness(String name, float getPercentajeTotal) {
             this.name = name;
@@ -96,5 +95,9 @@ public class Feed implements Comparator<Post> {
 
     public int compare(Post o1, Post o2) {
         return o2.getNewPublised().compareTo(o1.getNewPublised());
+    }
+
+    public int getValue(Post o1) {
+        return o1.getNewPublised();
     }
 }

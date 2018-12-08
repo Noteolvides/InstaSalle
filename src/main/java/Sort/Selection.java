@@ -1,17 +1,18 @@
 package Sort;
 
+import Comparators.Comparators;
 import JsonClasses.Post;
 
 import java.util.Comparator;
 import java.util.List;
 
 public class Selection {
-    private Comparator<Post> c;
+    private Comparators<Post> c;
 
     public Selection() {
     }
 
-    public void SelectionSort(List<Post> a, Comparator<Post> c){
+    public void SelectionSort(List<Post> a, Comparators<Post> c){
         this.c = c;
         Selection(a,a.size());
     }

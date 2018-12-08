@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class Location implements Comparator<Post> {
+public class Location implements Comparators<Post> {
 
     private final int RADIUS_EARTH = 6371;
 
@@ -42,6 +42,10 @@ public class Location implements Comparator<Post> {
        Double dist1 = calculDist(o1.getLocation(),location);
        Double dist2  = calculDist(o2.getLocation(),location);
        return dist1.compareTo(dist2);
+    }
+
+    public int getValue(Post o1) {
+        return (int)calculDist(o1.getLocation(),location)*10000;
     }
 
 }

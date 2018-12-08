@@ -1,5 +1,6 @@
 package Sort;
 
+import Comparators.Comparators;
 import JsonClasses.Post;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -9,12 +10,12 @@ import java.util.List;
 
 
 public class Merge {
-   private Comparator<Post> c;
+   private Comparators<Post> c;
 
     public Merge() {
     }
 
-    public void MergeSort(List<Post> a, Comparator c){
+    public void MergeSort(List<Post> a, Comparators c){
         this.c = c;
         ordenaMerge(a, 0, a.size()-1);
     }
