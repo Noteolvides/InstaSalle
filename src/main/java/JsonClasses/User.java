@@ -11,13 +11,13 @@ public class User {
     @Override
     public String toString() {
         return "\nUser{" +
-                "\n\tusername='" + username + '\'' +
-                "\n\t\t, followers=" + followers +
-                "\n\t\t, follows=" + follows +
-                "\n\t\t, connections=" + connections +
-                "\n\t\t, posts=" + posts +
-                "\n\t\t, likedPosts=" + likedPosts +
-                "\n\t\t, commentedPosts=" + commentedPosts +
+                "username='" + username + '\'' +
+                ", followers=" + followers +
+                ", follows=" + follows +
+                ", connections=" + connections +
+                ", posts=" + posts +
+                ", likedPosts=" + likedPosts +
+                ", commentedPosts=" + commentedPosts +
                 '}';
     }
 

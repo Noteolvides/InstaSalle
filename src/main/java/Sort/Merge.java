@@ -1,61 +1,66 @@
 package Sort;
-/*
-public class Merge {
-    public static Integer[] ordenaMerge(Integer[] a, Integer i, Integer j){
-        Integer mig;
 
-        if (i>=j){
-            return a;
-        }
-        if (i<j){
-            mig = (i+j)/2;
-            a = ordenaMerge(a, i, mig);
-            a = ordenaMerge(a,mig+1, j);
-            a = merge(a, i, mig, j);
-        }
-        return a;
+import Comparators.Comparators;
+import JsonClasses.Post;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+
+
+
+public class Merge {
+   private Comparators<Post> c;
+
+    public Merge() {
     }
 
-    public static Integer[] merge(Integer[]a, Integer i, Integer mig, Integer j){
-        Integer[] b;
-        Integer k1, k2, cursor, kr;
+    public void MergeSort(List<Post> a, Comparators c){
+        this.c = c;
+        ordenaMerge(a, 0, a.size()-1);
+    }
 
-        k1 = i;
-        k2 = mig+1;
-        cursor = 1;
-
-        while (k1<=mig && k2<=j){
-            if(a[k1]<=a[k2]){
-                b[cursor] = a[k1];
-                k1++;
-                cursor++;
-            }
-            if(a[k1]>a[k2]){
-                b[cursor] = a[k2];
-                k2++;
-                cursor++;
-            }
+    private void ordenaMerge(List<Post> a, int i, int j){
+        if (i < j){
+            int mig = (i + j) / 2;
+            ordenaMerge(a, i, mig);
+            ordenaMerge(a,mig+1, j);
+            merge(a, i, mig, j);
         }
-        while (k1<=mig){
-            b[cursor] = a[k1];
+    }
+
+    private void merge(List<Post> a, int i, int mig, int j){
+        int n1 = mig - i + 1;
+        int n2 = j - mig;
+        List<Post> A = new ArrayList<Post>();
+        List<Post> B = new ArrayList<Post>();
+        for (int k = 0; k < n1; k++) {
+            A.add(a.get(i+k));
+        }
+        for (int t = 0; t < n2; t++) {
+            B.add(a.get(mig + 1 + t));
+        }
+        int k1 = 0,k2 = 0;
+        int cursor = i;
+        while (k1 < n1 && k2 < n2){
+            if (this.c.compare(A.get(k1),B.get(k2)) <= 0){
+                a.set(cursor,A.get(k1));
+                k1++;
+            }else{
+                a.set(cursor,B.get(k2));
+                k2++;
+            }
+            cursor++;
+        }
+        while (k1 < n1){
+            a.set(cursor,A.get(k1));
             k1++;
             cursor++;
         }
-        while (k2<=j){
-            b[cursor] = a[k2];
+        while (k2 < n2){
+            a.set(cursor,B.get(k2));
             k2++;
             cursor++;
         }
-        cursor = 1;
-        kr = i;
-
-        while (kr<=j){
-            a[kr] = b[cursor];
-            kr++;
-            cursor++;
-        }
-
-        return a;
     }
 }
-*/

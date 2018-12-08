@@ -10,16 +10,38 @@ public class Post{
     private String category;
     private List<String> liked_by;
     private List<String> commented_by;
+    private Integer newPublised;
+
+
+    public Integer getNewPublised() {
+        return newPublised;
+    }
+
+    public void setNewPublised(Integer newPublised) {
+        this.newPublised = newPublised;
+    }
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    private String creator;
+
+    public Post() {
+    }
 
     @Override
     public String toString() {
-        return "\n\tPost{" +
-                "\n\t\tid=" + id +
-                "\n\t\t\t, published=" + published +
-                "\n\t\t\t, location=" + location +
-                "\n\t\t\t, category='" + category + '\'' +
-                "\n\t\t\t, liked_by=" + liked_by +
-                "\n\t\t\t, commented_by=" + commented_by +
+        return "\nPost{" +
+                "id=" + id +
+                ", published=" + published +
+                ", location=" + location +
+                ", category='" + category + '\'' +
+                ", liked_by=" + liked_by +
+                ", commented_by=" + commented_by +
                 '}';
     }
 
@@ -48,8 +70,31 @@ public class Post{
         this.location = location;
     }
 
-    public String getCategory() {
-        return category;
+    public int getCategory() {
+        if (category.equals("landscape")){
+            return 0;
+        }else if(category.equals("food")){
+            return 1;
+        }else if(category.equals("sports")){
+            return 2;
+        }else if(category.equals("style")){
+            return 3;
+        }else if(category.equals("animals")){
+            return 4;
+        }else if(category.equals("tv_shows")){
+            return 5;
+        }else if(category.equals("science_tech")){
+            return 6;
+        }else if(category.equals("music")){
+            return 7;
+        }else if(category.equals("travel")){
+            return 8;
+        }else if(category.equals("architecture")){
+            return 9;
+        }else if(category.equals("fitness")){
+            return 10;
+        }
+        return 0;
     }
 
     public void setCategory(String category) {
@@ -71,5 +116,4 @@ public class Post{
     public void setCommented_by(List<String> commented_by) {
         this.commented_by = commented_by;
     }
-
 }
