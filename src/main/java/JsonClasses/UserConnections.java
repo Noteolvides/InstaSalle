@@ -6,12 +6,12 @@ public class UserConnections {
 
     @Override
     public String toString() {
-        return "\n\tUserConnections{" +
-                "\n\t\tusername='" + username + '\'' +
-                "\n\t\t\t, since=" + since +
-                "\n\t\t\t, visits=" + visits +
-                "\n\t\t\t, likes=" + likes +
-                "\n\t\t\t, comments=" + comments +
+        return "UserConnections{" +
+                "username='" + username + '\'' +
+                ", since=" + since +
+                ", visits=" + visits +
+                ", likes=" + likes +
+                ", comments=" + comments +
                 '}';
     }
 
