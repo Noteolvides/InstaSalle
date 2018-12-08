@@ -50,7 +50,7 @@ public class Radix {
 
     private void sort(List<Post> a, int n){
         Post m = maxValue(a, n);
-        for (int exp = 1; c.getValue(m)/exp > 0; exp *= 10){
+        for (int exp = 1; exp <= 1000000000; exp *= 10){
             countSort(a, n, exp);
         }
         Collections.reverse(a);

@@ -54,6 +54,7 @@ public class Main {
                 Feed f = new Feed(infomacionUsuarios, user);
                 List<Post> postsUb = f.getInformation();
                 menu2(postsUb, sort, f);
+                System.out.println(postsUb);
         }
     }
 
