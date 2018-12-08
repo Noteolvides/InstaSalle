@@ -1,10 +1,9 @@
 package Sort;
-
 import JsonClasses.Post;
 import java.util.Comparator;
 import java.util.List;
 
-//El penultimo lo ordena mal
+
 public class Quick {
     private Comparator<Post> c;
 
@@ -40,10 +39,11 @@ public class Quick {
                 a.set(aux[1],tmp);
                 aux[0]++;
                 aux[1]--;
-            }
-            if (aux[0] == aux[1]) {
-                aux[0]++;
-                aux[1]--;
+            }else{
+                if (aux[0] == aux[1]) {
+                    aux[0]++;
+                    aux[1]--;
+                }
             }
         }
         return aux;
