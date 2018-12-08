@@ -45,7 +45,7 @@ public class Location implements Comparators<Post> {
     }
 
     public int getValue(Post o1) {
-        return (int)calculDist(o1.getLocation(),location)*10000;
+        return (int)(calculDist(o1.getLocation(),location)*100000);
     }
 
 }

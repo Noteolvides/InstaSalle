@@ -35,15 +35,13 @@ public class Post{
 
     @Override
     public String toString() {
-        return "\n\tPost{" +
-                "\n\t\tid=" + id +
-                "\n\t\t\t, published=" + published +
-                "\n\t\t\t, location=" + location +
-                "\n\t\t\t, category='" + category + '\'' +
-                "\n\t\t\t, liked_by=" + liked_by +
-                "\n\t\t\t, commented_by=" + commented_by +
-                //"\n\t\t\t, creator='" + creator + '\'' +
-                //"\n\t\t\t, published2='" + newPublised + '\'' +
+        return "\nPost{" +
+                "id=" + id +
+                ", published=" + published +
+                ", location=" + location +
+                ", category='" + category + '\'' +
+                ", liked_by=" + liked_by +
+                ", commented_by=" + commented_by +
                 '}';
     }
 

@@ -16,6 +16,7 @@ public class Radix {
         this.c = c;
         sort(a,a.size());
     }
+    /*
     private Post maxValue(List<Post> a, int n){
         Post max = a.get(0);
 
@@ -26,7 +27,7 @@ public class Radix {
         }
         return max;
     }
-
+    */
     private void countSort(List<Post> a, int n, int exp){
         Post[] resultat = new Post[n];
         int counter[] = new int[n];
@@ -49,10 +50,8 @@ public class Radix {
     }
 
     private void sort(List<Post> a, int n){
-        Post m = maxValue(a, n);
         for (int exp = 1; exp <= 1000000000; exp *= 10){
             countSort(a, n, exp);
         }
-        Collections.reverse(a);
     }
 }
