@@ -16,11 +16,11 @@ public class Location implements Comparators<Post> {
         }
     }
 
-    public double haversin(double theta){
+    private double haversin(double theta){
         return Math.pow(Math.sin(theta/2),2);
     }
 
-    public double calculDist(List<Double> p1, List<Double> p2){
+    private double calculDist(List<Double> p1, List<Double> p2){
         Double teta1 = Math.toRadians(p1.get(0));
         Double teta2  = Math.toRadians(p2.get(0));
 
