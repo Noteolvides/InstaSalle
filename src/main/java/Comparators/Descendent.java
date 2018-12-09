@@ -12,6 +12,6 @@ public class Descendent implements Comparators<Post> {
         return o1.getPublished();
     }
     public int compare(Post o1, Post o2) {
-        return o2.getPublished().compareTo(o1.getPublished());
+        return o1.getPublished().compareTo(o2.getPublished());
     }
 }
