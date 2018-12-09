@@ -10,6 +10,12 @@ public class Location implements Comparators<Post> {
 
     private final int RADIUS_EARTH = 6371;
 
+    public void preOrder(List<Post> p){
+        for (Post i:p) {
+            i.setDistance(calculDist(i.getLocation(),location));
+        }
+    }
+
     public double haversin(double theta){
         return Math.pow(Math.sin(theta/2),2);
     }
@@ -39,13 +45,11 @@ public class Location implements Comparators<Post> {
 
 
     public int compare(Post o1, Post o2) {
-       Double dist1 = calculDist(o1.getLocation(),location);
-       Double dist2  = calculDist(o2.getLocation(),location);
-       return dist1.compareTo(dist2);
+       return o1.getDistance().compareTo(o2.getDistance());
     }
 
     public int getValue(Post o1) {
-        return (int)(calculDist(o1.getLocation(),location)*100000);
+        return (int)(o1.getDistance()*100000);
     }
 
 }

@@ -12,6 +12,16 @@ public class Post{
     private List<String> commented_by;
     private Integer newPublised;
 
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    private Double distance;
+
 
     public Integer getNewPublised() {
         return newPublised;

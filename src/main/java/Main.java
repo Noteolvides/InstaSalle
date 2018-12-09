@@ -3,7 +3,7 @@ import JsonClasses.*;
 import Sort.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javafx.geometry.Pos;
+
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -46,6 +46,7 @@ public class Main {
             case 2:
                 System.out.println("\tUbicacion:");
                 Location l = new Location(loc);
+                l.preOrder(posts);
                 menu2(posts, sort, l);
                 System.out.println(posts);
                 break;
