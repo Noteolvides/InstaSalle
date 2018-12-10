@@ -3,6 +3,9 @@ package JsonClasses;
 
 import java.util.List;
 
+/**
+ * La classe Post
+ */
 public class Post{
     private Integer id;
     private Integer published;

@@ -2,6 +2,9 @@ package JsonClasses;
 
 import java.util.List;
 
+/**
+ *
+ */
 public class User {
     private String username;
     private Integer followers;

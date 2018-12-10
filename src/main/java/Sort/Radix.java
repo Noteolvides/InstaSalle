@@ -5,7 +5,9 @@ import JsonClasses.Post;
 import java.util.Collections;
 import java.util.List;
 
-//Solo ordena por ubicacion
+/**
+ *
+ */
 public class Radix {
     private Comparators<Post> c;
 

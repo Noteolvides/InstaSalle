@@ -7,8 +7,9 @@ import java.util.Comparator;
 import java.util.List;
 
 
-
-
+/**
+ *
+ */
 public class Merge {
    private Comparators<Post> c;
 

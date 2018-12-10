@@ -7,6 +7,9 @@ import JsonClasses.UserConnections;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class Feed implements Comparators<Post> {
     private class informationOfLlikeness{
         public informationOfLlikeness(String name, float getPercentajeTotal) {
@@ -60,7 +63,7 @@ public class Feed implements Comparators<Post> {
             postsFeed.addAll(aux);
         }
 
-        //Obetenemos un portcentaje de cuanto le gusta un usuario, para nosotros los likes y los comentarios valen lo mismo un 50%
+        //Obtenemos un portcentaje de cuanto le gusta un usuario, para nosotros los likes y los comentarios valen lo mismo un 50%
         float howMuchILikeYou;
         for (UserConnections i:connections){
             howMuchILikeYou = (((float)i.getLikes()/allLikes + (float)i.getComments()/allComments)*100/2 + (float)i.getVisits()/allVisits*100)/2;

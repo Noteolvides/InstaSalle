@@ -4,6 +4,9 @@ import Comparators.Comparators;
 import JsonClasses.Post;
 import java.util.List;
 
+/**
+ *
+ */
 public class Selection {
     private Comparators<Post> c;
 
