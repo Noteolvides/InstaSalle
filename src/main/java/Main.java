@@ -18,6 +18,11 @@ public class Main {
         menu(infomacionUsuarios, args);
     }
 
+    /**
+     *
+     * @param infomacionUsuarios
+     * @param args
+     */
     private static void menu(User[] infomacionUsuarios, String[] args) {
         int sort = Integer.parseInt(args[1]);
         int segons = Integer.parseInt(args[2]);
@@ -59,6 +64,12 @@ public class Main {
         }
     }
 
+    /**
+     *
+     * @param posts
+     * @param sort
+     * @param c
+     */
     private static void menu2(List<Post> posts, int sort, Comparators<Post> c) {
         long start,end;
         switch (sort) {

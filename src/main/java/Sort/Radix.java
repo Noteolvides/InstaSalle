@@ -18,7 +18,7 @@ public class Radix {
     }
 
     /**
-     *
+     * Metodo que llama al meotodo de ordenacion pasando los parametros
      * @param a Lista de Post
      * @param c Comparador
      */
@@ -40,7 +40,7 @@ public class Radix {
     */
 
     /**
-     *
+     * Metodo que implementa el CountSort
      * @param a Lista de Posts
      * @param n Tamaño de la lista
      * @param exp Numero digito a comparar

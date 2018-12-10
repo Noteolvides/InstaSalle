@@ -17,7 +17,7 @@ public class Selection {
     }
 
     /**
-     *
+     * Metodo que llama al meotodo de ordenacion pasando los parametros
      * @param a Lista de Posts
      * @param c Comparador
      */

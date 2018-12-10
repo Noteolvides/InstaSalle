@@ -4,7 +4,8 @@ package JsonClasses;
 import java.util.List;
 
 /**
- * La classe Post
+ * La classe Post implementa los atributos y metodos para crear el objeto de las publicaciones
+ * para la lectura del JSON
  */
 public class Post{
     private Integer id;
