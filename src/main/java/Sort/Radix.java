@@ -9,11 +9,19 @@ import java.util.List;
  *
  */
 public class Radix {
+    /**Variable Comparators para comparar con diferentes criterios sin tener
+     * modificar el algorismo al completo, gracias a la utilizacion de un a interface*/
     private Comparators<Post> c;
 
+    /** Constructor vacio */
     public Radix() {
     }
 
+    /**
+     *
+     * @param a Lista de Post
+     * @param c Comparador
+     */
     public void RadixSort(List<Post> a, Comparators<Post> c){
         this.c = c;
         sort(a,a.size());
@@ -30,6 +38,13 @@ public class Radix {
         return max;
     }
     */
+
+    /**
+     *
+     * @param a Lista de Posts
+     * @param n Tamaño de la lista
+     * @param exp Numero digito a comparar
+     */
     private void countSort(List<Post> a, int n, int exp){
         Post[] resultat = new Post[n];
         int counter[] = new int[n];

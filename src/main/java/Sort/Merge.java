@@ -8,28 +8,60 @@ import java.util.List;
 
 
 /**
- *
+ * La classe Merge implementa el algorismo de ordenacion MergeSort
+ * junto con un atributo Comparator.
  */
 public class Merge {
-   private Comparators<Post> c;
+    /** Variable Comparators para comparar con diferentes criterios sin tener
+     * modificar el algorismo al completo, gracias a la utilizacion de un a interface
+     * */
 
+    private Comparators<Post> c;
+
+    /**
+     * Constructor vacio
+     **/
     public Merge() {
     }
 
+    /**
+     * Metodo que llama al mergesort pasando los parametros necessarios para realizarlo
+     * @param a Lista de Posts
+     * @param c Comparador
+     */
     public void MergeSort(List<Post> a, Comparators c){
         this.c = c;
         ordenaMerge(a, 0, a.size()-1);
     }
 
+    /**
+     * Metodo de llamadas recursivas para hacer la ordenacion, mediante la division de la
+     * lista hasta llegar al caso trivial donde solo hay un elemento.
+     * @param a Lista de Posts
+     * @param i Primera posicio de la llista (0)
+     * @param j Ultima posicio de la llista
+     */
     private void ordenaMerge(List<Post> a, int i, int j){
+        //Se comprueba el caso no trivial
         if (i < j){
+            //Calcula la mitad de la division de la lista
             int mig = (i + j) / 2;
+            //Llamada recursiva mitad izquierda
             ordenaMerge(a, i, mig);
+            //Llamada recursiva mitad derecha
             ordenaMerge(a,mig+1, j);
+            //Llamada que ordena la division
             merge(a, i, mig, j);
         }
     }
 
+    /**
+     * Ordenacion de la division de la lista.
+     * @param a Lista de Posts
+     * @param i Primera posicion de la division
+     * @param mig Mitad de la division
+     * @param j Ultima posicion de la division
+     */
     private void merge(List<Post> a, int i, int mig, int j){
         int n1 = mig - i + 1;
         int n2 = j - mig;
