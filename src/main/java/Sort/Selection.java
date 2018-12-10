@@ -27,7 +27,7 @@ public class Selection {
     }
 
     /**
-     *
+     * Metodo que implementa el SelectionSort
      * @param a Lista de Posts
      * @param n Tamaño de la lista
      */

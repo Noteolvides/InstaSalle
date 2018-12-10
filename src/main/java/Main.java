@@ -19,9 +19,9 @@ public class Main {
     }
 
     /**
-     *
-     * @param infomacionUsuarios
-     * @param args
+     * Metodo donde se hace un "menu" selecionar para el criterio de ordenacion
+     * @param infomacionUsuarios Datos usuarios json
+     * @param args Parametros del programa
      */
     private static void menu(User[] infomacionUsuarios, String[] args) {
         int sort = Integer.parseInt(args[1]);
@@ -65,10 +65,10 @@ public class Main {
     }
 
     /**
-     *
-     * @param posts
-     * @param sort
-     * @param c
+     * Metodo para realizar el segundo "menu" para selecionar el tipo de ordenacion
+     * @param posts Lista de publicaciones
+     * @param sort Numero corespondiente al sort
+     * @param c Criterio de comparacion dentro del sort
      */
     private static void menu2(List<Post> posts, int sort, Comparators<Post> c) {
         long start,end;
