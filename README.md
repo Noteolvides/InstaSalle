@@ -21,6 +21,8 @@ El primer parametro indica que archivo queremos leer.
   - s_dataset.json
   - m_dataset.json
   - personalizado.json
+  
+  *Los archivos de datasets deben estar dentro de la carpeta, junto el README.
 
 
 El segundo parametro indica con que metodo de ordenamiento quieres ordenarlo, seguimos el siguiente orden.
