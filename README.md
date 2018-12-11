@@ -31,7 +31,7 @@ El tercer parametro indica porque queremos ordenar
         
 ### Ejemplo de Argumentos
 
-1. Radix Combinacion de prioridades con el usuario 14
+1. Radix Combinacion de prioridades con el user = "user14"
 
     ejemplo.json 4 3 14
     
