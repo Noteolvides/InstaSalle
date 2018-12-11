@@ -4,6 +4,12 @@ xs_dataset.json
 posts_6M_dataset.json
 /colors
 .idea/workspace.xml
+debugger.renderers.xml
+find.xml
+toStringTemplates.xml
+markdown.xml
+/datasets_funcionalitats_1_2
+/Dataset++
 
 # Intellij
 .idea/
