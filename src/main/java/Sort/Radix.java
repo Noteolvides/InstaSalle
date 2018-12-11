@@ -27,6 +27,12 @@ public class Radix {
         sort(a,a.size());
     }
 
+    /**
+     * Devuelve el valor mas grande de la lista
+     * @param a lista de Posts
+     * @param n Tamaño de la lista
+     * @return Devuelve el Post con el valor mas grande
+     */
     private Post maxValue(List<Post> a, int n){
         Post max = a.get(0);
 
@@ -65,6 +71,11 @@ public class Radix {
         }
     }
 
+    /**
+     * Metodo que llama al CountSort por cada digito
+     * @param a Lista de Posts
+     * @param n Tamaño de la lista
+     */
     private void sort(List<Post> a, int n){
         Post max = maxValue(a,n);
         for (int exp = 1; c.getValue(max)/exp > 0; exp *= 10){
