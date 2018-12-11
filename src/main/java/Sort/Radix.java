@@ -16,18 +16,17 @@ public class Radix {
         this.c = c;
         sort(a,a.size());
     }
-    /*
+
     private Post maxValue(List<Post> a, int n){
         Post max = a.get(0);
 
         for (int i = 1; i < n; i++){
-            if (this.c.compare(a.get(i),max) > 0){
+            if (this.c.compare(a.get(i),max) < 0){
                 max = a.get(i);
             }
         }
         return max;
     }
-    */
     private void countSort(List<Post> a, int n, int exp){
         Post[] resultat = new Post[n];
         int counter[] = new int[n];
@@ -50,7 +49,8 @@ public class Radix {
     }
 
     private void sort(List<Post> a, int n){
-        for (int exp = 1; exp <= 1000000000; exp *= 10){
+        Post max = maxValue(a,n);
+        for (int exp = 1; c.getValue(max)/exp > 0; exp *= 10){
             countSort(a, n, exp);
         }
     }
