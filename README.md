@@ -1,6 +1,17 @@
 # IntaSalle
 
+## IDE
+
+Para poder compilar y ejecutar el proyecto, se tendra que utilizar la IDE de jetBrains de IntelliJ Idea.
+Una vez se ha abierto el proyecto con la IDE, si lo pide se tendra que acceptar la conversion del proyecto a Maven 
+y la descarga automatica de las librerias.
+Despues de seguir estos passos ya se podra configura los diferentes argumentos para posteriormente compilarlo y ejecutarlo.
+Para introducir los argumentos tendras que dirigirte al botón del lado del "play" para compilar donde pone main. Allí seleccionaras "Edit Configurations...".
+Esta opción te llevara a una ventana donde la casilla con el nombre de "Program Arguments:" es donde introduciras los argumentos con el formato siguiente.
+
 ## Argumentos
+
+Los argumentos introducidos tienen que estar separados entre ellos por un espacio.
 
 El primer parametro indica que archivo queremos leer.
 
