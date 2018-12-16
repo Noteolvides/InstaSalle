@@ -3,6 +3,10 @@ package JsonClasses;
 
 import java.util.List;
 
+/**
+ * La classe Post implementa los atributos y metodos para crear el objeto de las publicaciones
+ * para la lectura del JSON
+ */
 public class Post{
     private Integer id;
     private Integer published;
@@ -11,6 +15,16 @@ public class Post{
     private List<String> liked_by;
     private List<String> commented_by;
     private Integer newPublised;
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    private Double distance;
 
 
     public Integer getNewPublised() {

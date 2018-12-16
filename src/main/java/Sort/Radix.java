@@ -5,29 +5,51 @@ import JsonClasses.Post;
 import java.util.Collections;
 import java.util.List;
 
-//Solo ordena por ubicacion
+/**
+ *
+ */
 public class Radix {
+    /**Variable Comparators para comparar con diferentes criterios sin tener
+     * modificar el algorismo al completo, gracias a la utilizacion de un a interface*/
     private Comparators<Post> c;
 
+    /** Constructor vacio */
     public Radix() {
     }
 
+    /**
+     * Metodo que llama al meotodo de ordenacion pasando los parametros
+     * @param a Lista de Post
+     * @param c Comparador
+     */
     public void RadixSort(List<Post> a, Comparators<Post> c){
         this.c = c;
         sort(a,a.size());
     }
-    /*
+
+    /**
+     * Devuelve el valor mas grande de la lista
+     * @param a lista de Posts
+     * @param n Tamaño de la lista
+     * @return Devuelve el Post con el valor mas grande
+     */
     private Post maxValue(List<Post> a, int n){
         Post max = a.get(0);
 
         for (int i = 1; i < n; i++){
-            if (this.c.compare(a.get(i),max) > 0){
+            if (this.c.compare(a.get(i),max) < 0){
                 max = a.get(i);
             }
         }
         return max;
     }
-    */
+
+    /**
+     * Metodo que implementa el CountSort
+     * @param a Lista de Posts
+     * @param n Tamaño de la lista
+     * @param exp Numero digito a comparar
+     */
     private void countSort(List<Post> a, int n, int exp){
         Post[] resultat = new Post[n];
         int counter[] = new int[n];
@@ -49,8 +71,14 @@ public class Radix {
         }
     }
 
+    /**
+     * Metodo que llama al CountSort por cada digito
+     * @param a Lista de Posts
+     * @param n Tamaño de la lista
+     */
     private void sort(List<Post> a, int n){
-        for (int exp = 1; exp <= 1000000000; exp *= 10){
+        Post max = maxValue(a,n);
+        for (int exp = 1; c.getValue(max)/exp > 0; exp *= 10){
             countSort(a, n, exp);
         }
     }

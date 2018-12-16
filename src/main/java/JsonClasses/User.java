@@ -2,6 +2,10 @@ package JsonClasses;
 
 import java.util.List;
 
+/**
+ * La classe User implementa los atributos y metodos para crear el objeto de los usuarios
+ * para la lectura del JSON
+ */
 public class User {
     private String username;
     private Integer followers;

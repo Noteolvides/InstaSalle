@@ -4,17 +4,33 @@ import Comparators.Comparators;
 import JsonClasses.Post;
 import java.util.List;
 
+/**
+ *
+ */
 public class Selection {
+    /**Variable Comparators para comparar con diferentes criterios sin tener
+     * modificar el algorismo al completo, gracias a la utilizacion de un a interface*/
     private Comparators<Post> c;
 
+    /** Constructor vacio */
     public Selection() {
     }
 
+    /**
+     * Metodo que llama al meotodo de ordenacion pasando los parametros
+     * @param a Lista de Posts
+     * @param c Comparador
+     */
     public void SelectionSort(List<Post> a, Comparators<Post> c){
         this.c = c;
         Selection(a,a.size());
     }
 
+    /**
+     * Metodo que implementa el SelectionSort
+     * @param a Lista de Posts
+     * @param n Tamaño de la lista
+     */
     private void Selection(List<Post> a, int n){
         int minim;
         Post aux;

@@ -3,7 +3,7 @@ import JsonClasses.*;
 import Sort.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import javafx.geometry.Pos;
+
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -18,6 +18,11 @@ public class Main {
         menu(infomacionUsuarios, args);
     }
 
+    /**
+     * Metodo donde se hace un "menu" selecionar para el criterio de ordenacion
+     * @param infomacionUsuarios Datos usuarios json
+     * @param args Parametros del programa
+     */
     private static void menu(User[] infomacionUsuarios, String[] args) {
         int sort = Integer.parseInt(args[1]);
         int segons = Integer.parseInt(args[2]);
@@ -46,6 +51,7 @@ public class Main {
             case 2:
                 System.out.println("\tUbicacion:");
                 Location l = new Location(loc);
+                l.preOrder(posts);
                 menu2(posts, sort, l);
                 System.out.println(posts);
                 break;
@@ -58,6 +64,12 @@ public class Main {
         }
     }
 
+    /**
+     * Metodo para realizar el segundo "menu" para selecionar el tipo de ordenacion
+     * @param posts Lista de publicaciones
+     * @param sort Numero corespondiente al sort
+     * @param c Criterio de comparacion dentro del sort
+     */
     private static void menu2(List<Post> posts, int sort, Comparators<Post> c) {
         long start,end;
         switch (sort) {

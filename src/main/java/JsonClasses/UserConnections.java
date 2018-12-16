@@ -1,5 +1,9 @@
 package JsonClasses;
 
+/**
+ * La classe UserConnections implementa los atributos y metodos para crear el objeto de las conexiones
+ * entre usuarios para la lectura del JSON
+ */
 public class UserConnections {
     private String username;
     private Integer since;
