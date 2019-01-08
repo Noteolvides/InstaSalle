@@ -2,7 +2,9 @@ m_dataset.json
 s_dataset.json
 xs_dataset.json
 posts_6M_dataset.json
-/colors
+colors/
+colors/_@user_Darcula.icls
+_windows/git.xml
 .idea/workspace.xml
 debugger.renderers.xml
 find.xml
@@ -15,6 +17,7 @@ markdown.xml
 .idea/
 *.iml
 *.iws
+*.xml
 
 # Mac
 .DS_Store
